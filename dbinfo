@@ -1,0 +1,30 @@
+{ "_id" : ObjectId("5a381efc61ed175af82ef2a6"), "name" : "Red Beanie", "item" : "http://store.twentyonepilots.com/top-red-beanie.html", "details" : "This will be the perfect christmas present for your niece, don't forget to buy it during holiday sales!" }
+{ "_id" : ObjectId("5a381f3161ed175af82ef2a8"), "name" : "Michael Phelps' Wikipedia", "item" : "https://en.wikipedia.org/wiki/Michael_Phelps", "details" : "Really fascinating information about the world's fastest swimmer!" }
+{ "_id" : ObjectId("5a383e907fb5ab9159ae04cc"), "name" : "Studying Tips", "item" : "https://greatist.com/happiness/better-study-tips-test", "details" : "Let's be honest, you clearly need these..." }
+{ "_id" : ObjectId("5a38526ca2d78cff85318577"), "name" : "Buzzfeed Corgis", "item" : "https://www.buzzfeed.com/mikerose/corgis-to-get-you-through-your-day?utm_term=.oygka2Ypok#.bre8qYmyG8", "details" : "Corgis are foolproof cures to sadness. Check this out if you need a pick-me-up" }
+{ "_id" : ObjectId("5a382935fdf492249bd76021"), "name" : "Dream Vacation Destinations", "item" : "http://www.travelchannel.com/interests/travel-tips/articles/top-10-vacation-spots", "details" : "Here are some fun ideas for you to investigate next time you plan your holiday trips with your loved ones!" }
+
+db.links.insert({})
+db.links.insert({"item" : "https://greatist.com/happiness/better-study-tips-test", "name" : "Studying Tips", "details" : "Let's be honest, you clearly need these...", "category" : "Useful", "date" : "12/05/17"})
+db.links.insert({"item" : "https://en.wikipedia.org/wiki/Michael_Phelps", "name" : "Michael Phelps' Wikipedia", "details" : "Really fascinating information about the world's fastest swimmer!", "category" : "Other", "date" : "12/01/17"})
+db.links.insert({"item" : "https://www.instagram.com/hereisgina/?hl=en", "name" : "The Best Instagram Account Ever", "details" : "Surprise Surprise, the greatest person on earth has an EQUALLY amazing insta", "category" : "Favorite", "date" : "12/01/17" })
+db.links.insert({"item" : "http://store.twentyonepilots.com/top-red-beanie.html", "name" : "Red Beanie", "details" : "This will be the perfect christmas present for your niece, don't forget to buy it during holiday sales!", "category" : "General", "date" : "12/01/17"})
+db.links.insert({"item" : "https://www.bmw-berlin-marathon.com/en/plan-your-race/registration-2018.html", "name" : "Berlin Marathon Registration!", "details" : "Don't forget to sign up before it's too late!!!", "category" : "Urgent", "date" : "12/06/17"})
+db.links.insert({"item" : "http://www.travelchannel.com/interests/travel-tips/articles/top-10-vacation-spots", "name" : "Dream Vacation Destinations", "details" : "Here are some fun ideas for you to investigate next time you plan your holiday trips with your loved ones!", "category" : "Useful", "date" : "12/06/17"})
+db.links.insert({"item" : "https://www.buzzfeed.com/mikerose/corgis-to-get-you-through-your-day?utm_term=.oygka2Ypok#.bre8qYmyG8", "name" : "Buzzfeed Corgis", "details" : "Corgis are foolproof cures to sadness. Check this out if you need a pick-me-up", "category" : "None", "date" : "12/05/17"})
+
+db.links.remove({})
+db.links.remove({"name" : "Beautiful Scenery Image"})
+db.links.remove({"name" : "Red Beanie"})
+db.links.remove({"name" : "The Best Instagram Account Ever"})
+db.links.remove({"name" : "Berlin Marathon Registration!"})
+db.links.remove({"name" : "Michael Phelps' Wikipedia"})
+db.links.remove({"name" : "Studying Tips"})
+db.links.remove({"name" : "Buzzfeed Corgis"})
+db.links.remove({"name" : "Dream Vacation Destinations"})
+
+db.links.update({}, {})
+db.links.update({"name" : "Buzzfeed Corgis"}, {"item" : "https://www.buzzfeed.com/mikerose/corgis-to-get-you-through-your-day?utm_term=.oygka2Ypok#.bre8qYmyG8", "name" : "Buzzfeed Corgis", "details" : "Corgis are foolproof cures to sadness. Check this out if you need a pick-me-up", "category" : "favorite", "date" : "12/05/17"})
+db.links.update({"name" : "Michael Phelps' Wikipedia"},{"name" : "Michael Phelps' Wikipedia", "details" : "Really fascinating information about the world's fastest swimmer!", "category" : "General", "date" : "12/01/17"})
+db.links.update({"name" : "Red Beanie"}, {"item" : "http://store.twentyonepilots.com/top-red-beanie.html", "name" : "Red Beanie", "details" : "treat yoself when you're not broke anymore, and buy this", "category" : "general", "date" : "12/01/17"})
+db.links.update({"name" : "The Best Instagram Account Ever"}, {"item" : "https://www.instagram.com/hereisgina/?hl=en", "name" : "The Best Instagram Account Ever", "details" : "Surprise Surprise, the greatest person (Gina Rodriguez, duh) on earth has an EQUALLY amazing insta", "category" : "Favorite", "date" : "12/01/17" })

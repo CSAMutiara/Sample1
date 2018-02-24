@@ -1,0 +1,62 @@
+body{
+    background: #96858F; /*dusty-pink*/
+    
+    color: #18121E; /*navy-blue*/
+    font-family: 'Prociono', serif;
+}
+
+.navbar-expand-lg{
+    background: #6D7993; /*paper*/
+    
+    color: #D5D5D5; /*lavendar*/
+    font-family: 'Prociono', serif;
+}
+
+/*
+rust: #B56357;
+mint: #B4DBC0;
+slate: #EAE3EA;
+sea foam: #A7B3A5;
+
+dusty-pink: #96858F;
+lavendar: #6D7993;
+overcast: #9099A2;
+offwhite-paper: #D5D5D5;
+
+pale-gold: #C0B283;
+silk: #DCD0C0;
+paper: #F4F4F4;
+charcoal: #373737;
+
+grain: #D7CEC7;
+blackboard: #565656;
+oxblood: #76323F;
+tan: #C09F80;
+
+sky: #CAEBF2;
+arbon: #A9A9A9;
+watermelon: #FFF3B3F;
+neutral: #EFEFEF;
+
+navy-blue: #18121E;
+gunmetal: #233237;
+rusty-red: #984B43;
+warm-yellow: #EAC67A;
+
+powder-blue: #BFD8D2;
+light-peach: #FEDCD2;
+warm-orange: #DF744A;
+dark-lemon: #DCB239;
+
+grey-blue: #A9B7C0;
+minty: #C7D8C6;
+light: #EFD9C1;
+powder: #CCCBC6;
+
+fresh-yellow: #F7F5E6;
+vermillion: #333A56;
+sunshine: #52658F;
+clean: #E8E8E8;
+*/
+
+

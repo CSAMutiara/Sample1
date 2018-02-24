@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include partials/head %>
+    <link rel='stylesheet' href='/stylesheets/style.css' type="text/css"/>
+  </head>
+  <body class="container">
+    <header>
+      <% include partials/header %>
+    </header>
+    <main>
+      <br><p></p>
+      
+      <div class="jumbotron">
+          
+        <div id="link-table">
+        <p></p><br>
+            
+            <!-- title row -->
+            <div class="row justify-content-md-center">
+                <h1>List View:</h1>
+            </div>
+            <br>     
+            
+            <!-- description row -->
+            <div class="row justify-content-md-center">
+                <p>This is your complete library of saved links.</p>
+                <p>Each link is represented by a categorically color-coordinated card. (List order: most recent to oldest)</p>
+                <p>Simply click the button on the link's "card" to open the link in a new tab!</p>
+            </div>
+            <br>
+                
+        </div> <!-- end of link-table div -->
+        <br>
+        
+        <div class="row justify-content-md-center">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    <li class="page-item"><a class="page-link" href="/form">Form</a></li>
+                    <!-- <li class="page-item"><a class="page-link" href="#">1</a></li> -->
+                    <li class="page-item"><a class="page-link" href="/link">Linklib</a></li>
+                    <li class="page-item"><a class="page-link" href="/linkb">Categorical</a></li>
+                    <li class="page-item"><a class="page-link" href="/linkc">List</a></li>
+                </ul>
+            </nav>
+        </div>
+        <br><hr><br><br>
+            
+        <div class="container">
+          <div class="row justify-content-md-center">
+            <div class="col-lg-3">
+                <div class="row justify-content-md-center">
+                  <h4 class="text-danger">Urgent Links:</h4>
+                </div>
+                <br>
+                <ul class="list-unstyled">
+                    <div class="row justify-content-md-center">
+                        <% for(var i=0; i <links.length; i++){ %>
+                            <div class="list-group" style="width: 20rem;">
+                                <% if ((links[i].category === 'Urgent') || (links[i].category === 'urgent')) { %> 
+                                <a href="<%= links[i].item %>" target="_blank" class="list-group-item list-group-item-danger"><%= links[i].name %></a>
+                                <% } %>  
+                            <% } %>
+                        </div>
+                    </div>
+                    <br>
+                </ul>
+                <br>
+            </div>
+            <div class="col-lg-1"></div>
+            <div class="col-lg-3">
+                <div class="row justify-content-md-center">
+                  <h4 class="text-info">Favorite Links:</h4>
+                </div>
+                <br>
+                <ul class="list-unstyled">
+                    <div class="row justify-content-md-center">
+                        <% for(var i=0; i <links.length; i++){ %>
+                            <div class="list-group" style="width: 20rem;">
+                                <% if ((links[i].category === 'Favorite') || (links[i].category === 'favorite')) { %> 
+                                    <a href="<%= links[i].item %>" target="_blank" class="list-group-item list-group-item-info"><%= links[i].name %></a>
+                                <% } %>  
+                            <% } %>
+                        </div>
+                    </div>
+                    <br>
+                </ul>
+                <br>
+            </div>
+            <div class="col-lg-1"></div>
+            <div class="col-lg-3">
+                <div class="row justify-content-md-center">
+                  <h4 class="text-warning">Useful Links:</h4>
+                </div>
+                <br>
+                <ul class="list-unstyled">
+                    <div class="row justify-content-md-center">
+                        <% for(var i=0; i <links.length; i++){ %>
+                            <div class="list-group" style="width: 20rem;">
+                                <% if ((links[i].category === 'Useful') || (links[i].category === 'useful')) { %> 
+                                    <a href="<%= links[i].item %>" target="_blank" class="list-group-item list-group-item-warning"><%= links[i].name %></a>
+                                <% } %>  
+                            <% } %>
+                        </div>
+                    </div>
+                    <br>
+                </ul>
+                <br>
+            </div>
+          </div>
+          <div class="row justify-content-md-center">
+            <div class="col-lg-4">
+                <div class="row justify-content-md-center">
+                  <h4 class="text-dark">General Links:</h4>
+                </div>
+                <br>
+                <ul class="list-unstyled">
+                    <div class="row justify-content-md-center">
+                        <% for(var i=0; i <links.length; i++){ %>
+                            <div class="list-group" style="width: 20rem;">
+                                <% if ((links[i].category === 'General') || (links[i].category === 'general')) { %> 
+                                    <a href="<%= links[i].item %>" target="_blank" class="list-group-item list-group-item-dark"><%= links[i].name %></a>
+                                <% } %>
+                            <% } %>
+                        </div>
+                    </div>
+                    <br>
+                </ul>
+                <br>
+            </div>
+            <div class="col-lg-4">
+                <div class="row justify-content-md-center">
+                  <h4 class="text-secondary">Other Links:</h4>
+                </div>
+                <br>
+                <ul class="list-unstyled">
+                    <div class="row justify-content-md-center">
+                        <div class="list-group" style="width: 20rem;">
+                            <% for(var i=0; i <links.length; i++){ %>
+                                <% if ((links[i].category === 'General') || (links[i].category === 'general')) { %>
+                                <% } else if ((links[i].category === 'Favorite') || (links[i].category === 'favorite')) { %>
+                                <% } else if ((links[i].category === 'Useful') || (links[i].category === 'useful')) { %>
+                                <% } else if ((links[i].category === 'Urgent') || (links[i].category === 'urgent')) { %>
+                                <% } else { %>   
+                                    <a href="<%= links[i].item %>" target="_blank" class="list-group-item list-group-item-secondary"><%= links[i].name %></a>
+                                
+                            <% } %>
+                        <% } %>
+                        </div>
+                    </div>
+                    <br>
+                </ul>
+                <br>
+            </div>
+          </div>
+        </div>
+        
+        
+        
+        
+        
+        
+      </div>
+    </main>
+    <footer>
+        <p></p><p></p><p></p>
+      <% include partials/footer %>
+    </footer>
+  </body>
+</html>

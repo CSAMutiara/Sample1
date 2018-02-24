@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include partials/head %>
+    <link rel='stylesheet' href='/stylesheets/style.css' type="text/css"/>
+  </head>
+  <body class="container">
+    <header>
+      <% include partials/header %>
+    </header>
+    <main>
+      <br><p></p>
+      <div class="jumbotron">
+        <!-- link-table div -->
+        <div id="link-table">
+        <p></p><br>
+        
+            <!-- title row -->
+            <div class="row justify-content-md-center">
+                <h1>Success!</h1>
+            </div>
+            
+            <div class="row justify-content-md-center">
+                <h5>You just saved: <a href="<%= links.item %>" target="_blank"><%= links.item %></a> to:</h5>
+            </div><br><br>
+            
+            <div class="row justify-content-md-center">
+              
+              <% if ((links.category === 'General') || (links.category === 'general')) { %>
+                <li class="list-unstyled">
+                    <div class="col col-lg-12">
+                        <div class="card border-secondary" style="width: 20rem;">
+                            <div class="card-header">
+                                General Link
+                            </div>
+                            <div class="card-body text-center">
+                                <h4 class="card-title text-secondary"><%=links.name%></h4>
+                                <br>
+                                <p class="card-text"><%=links.details%></p>
+                                <a class="btn btn-outline-secondary" target="_blank" href="<%=links.item%>">Revisit this link!</a>
+                            </div>
+                            <div class="card-footer text-right">
+                                <small class="form-text text-muted">Submitted on <%=links.date%></small>
+                            </div>
+                        </div>
+                        <p></p>
+                    </div>
+                </li>
+            
+              <!-- Setting up Favorite Link Cards -->
+              <% } else if ((links.category === 'Favorite') || (links.category === 'favorite')) { %>    
+                  <li class="list-unstyled">
+                      <div class="col col-lg-12">
+                          <div class="card border-info" style="width: 20rem;">
+                              <div class="card-header text-info">
+                                  Favorite Link
+                              </div>
+                              <div class="card-body text-center">
+                                  <h4 class="card-title text-info"><%=links.name%></h4>
+                                  <br>
+                                  <p class="card-text text-secondary"><%=links.details%></p>
+                                  <a class="btn btn-outline-info" target="_blank" href="<%=links.item%>">Revisit this link!</a>
+                              </div>
+                              <div class="card-footer text-right">
+                                  <small class="form-text text-muted">Submitted on <%=links.date%></small>
+                              </div>
+                          </div>
+                          <p></p>
+                      </div>
+                  </li>
+                  
+              <!-- Setting up Useful Link Cards -->
+              <% } else if ((links.category === 'Useful') || (links.category === 'useful')) { %>    
+                  <li class="list-unstyled">
+                      <div class="col col-lg-12">
+                          <div class="card border-warning" style="width: 20rem;">
+                              <div class="card-header">
+                                  Useful Link
+                              </div>
+                              <div class="card-body text-center">
+                                  <h4 class="card-title text-warning"><%=links.name%></h4>
+                                  <br>
+                                  <p class="card-text text-secondary"><%=links.details%></p>
+                                  <a class="btn btn-warning text-secondary" target="_blank" href="<%=links.item%>">Revisit this link!</a>
+                              </div>
+                              <div class="card-footer text-right">
+                                  <small class="form-text text-muted">Submitted on <%=links.date%></small>
+                              </div>
+                          </div>
+                          <p></p>
+                      </div>
+                  </li>
+              
+              <!-- Setting up Urgent Link Cards -->
+              <% } else if ((links.category === 'Urgent') || (links.category === 'urgent')) { %>    
+                  <li class="list-unstyled">
+                      <div class="col col-lg-12">
+                          <div class="card border-danger" style="width: 20rem;">
+                              <div class="card-header">
+                                  Urgent Link
+                              </div>
+                              <div class="card-body text-center">
+                                  <h3 class="card-title text-danger"><%=links.name%></h3>
+                                  <br>
+                                  <p class="card-text"><%=links.details%></p>
+                                  <a class="btn btn-danger" target="_blank" href="<%=links.item%>">Revisit this link!</a>
+                              </div>
+                              <div class="card-footer text-right">
+                                  <small class="form-text text-muted">Submitted on <%=links.date%></small>
+                              </div>
+                          </div>
+                          <p></p>
+                      </div>
+                  </li>
+              
+              <!-- Setting up Other Link Cards -->
+              <% } else { %>     
+                  <li class="list-unstyled">
+                      <div class="col col-lg-12">
+                          <div class="card" style="width: 20rem;">
+                              <div class="card-header text-secondary">
+                                  <small>(uncategorized link)</small>
+                              </div>
+                              <div class="card-body text-center text-secondary">
+                                  <h5 class="card-title"><%=links.name%></h5>
+                                  <br>
+                                  <p class="card-text"><%=links.details%></p>
+                                  <a class="btn btn-outline-secondary" target="_blank" href="<%=links.item%>">Revisit this link!</a>
+                              </div>
+                              <div class="card-footer text-right">
+                                  <small class="form-text text-muted">Submitted on <%=links.date%></small>
+                              </div>
+                          </div>
+                          <p></p>
+                      </div>
+                  </li>
+              <% } %> <!-- end of Other Link Card setup -->   
+              <br>
+              
+            </div>
+            <br><br>
+            
+            <div class="row justify-content-md-center">
+              <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                  <li class="page-item"><a class="page-link" href="/form">Form</a></li>
+                  <!-- <li class="page-item"><a class="page-link" href="#">1</a></li> -->
+                  <li class="page-item"><a class="page-link" href="/link">Linklib</a></li>
+                </ul>
+              </nav>
+            </div>
+            <br><br>
+        
+        </div> <!-- end of link-table div -->
+        <br><br><br>
+        
+      </div>
+    </main>
+    <footer>
+        <p></p><p></p><p></p>
+      <% include partials/footer %>
+    </footer>
+  </body>
+</html>

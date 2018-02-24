@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include partials/head %>
+    <link rel='stylesheet' href='/stylesheets/style.css' type="text/css"/>
+  </head>
+  <body class="container">
+    <header>
+      <% include partials/header %>
+    </header>
+    <main>
+      <br><p></p>
+      </div>
+      <div class="jumbotron">
+        
+        <div id="link-table">
+        <p></p><br>
+            
+            <!-- title row -->
+            <div class="row justify-content-md-center">
+                <h1>Categorical View:</h1>
+            </div>
+            <br>     
+            
+            <!-- description row -->
+            <div class="row justify-content-md-center">
+                <p>This is your complete library of saved links.</p>
+                <p>Each link is represented by a categorically color-coordinated card. (List order: most recent to oldest)</p>
+                <p>Simply click the button on the link's "card" to open the link in a new tab!</p>
+            </div>
+            <br>
+                
+        </div> <!-- end of link-table div -->
+        <br>
+        
+        <div class="row justify-content-md-center">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    <li class="page-item"><a class="page-link" href="/form">Form</a></li>
+                    <!-- <li class="page-item"><a class="page-link" href="#">1</a></li> -->
+                    <li class="page-item"><a class="page-link" href="/link">Linklib</a></li>
+                    <li class="page-item"><a class="page-link" href="/linkb">Categorical</a></li>
+                    <li class="page-item"><a class="page-link" href="/linkc">List</a></li>
+                </ul>
+            </nav>
+        </div>
+        <br><hr><br><br>
+            
+        <!-- -->
+        
+        <div class="row justify-content-md-center">
+          <h4 class="text-danger">Urgent Links:</h4>
+        </div>
+        <br>
+        <ul class="list-unstyled">
+            <div class="row justify-content-md-center">
+                <% for(var i=0; i <links.length; i++){ %>
+                    <% if ((links[i].category === 'Urgent') || (links[i].category === 'urgent')) { %>  
+                        <li>
+                            <div class="col col-lg-12">
+                                <div class="card border-secondary" style="width: 20rem;">
+                                    <div class="card-body text-center">
+                                        <h3 class="card-title"><%=links[i].name%></h3>
+                                        <br>
+                                        <p class="card-text"><%=links[i].details%></p>
+                                        <a class="btn btn-outline-danger" target="_blank" href="<%=links[i].item%>">Revisit this link!</a>
+                                    </div>
+                                    <div class="card-footer text-right">
+                                        <small class="form-text text-muted">Submitted on <%=links[i].date%></small>
+                                    </div>
+                                </div>
+                                <p></p>
+                            </div>
+                        </li>
+                    <% } %>    
+                    <br>
+                <% } %>
+            </div>
+        </ul>
+        </p>
+        <br>
+        
+        <!-- -->
+        
+        <div class="row justify-content-md-center">
+          <h4 class="text-info">Favorite Links:</h4>
+        </div>
+        <br>
+        <ul class="list-unstyled">
+            <div class="row justify-content-md-center">
+                <% for(var i=0; i <links.length; i++){ %>
+                    <% if ((links[i].category === 'Favorite') || (links[i].category === 'favorite')) { %> 
+                        <li>
+                            <div class="col col-lg-12">
+                                <div class="card border-secondary" style="width: 20rem;">
+                                    <div class="card-body text-center">
+                                        <h4 class="card-title"><%=links[i].name%></h4>
+                                        <br>
+                                        <p class="card-text text-secondary"><%=links[i].details%></p>
+                                        <a class="btn btn-outline-info" target="_blank" href="<%=links[i].item%>">Revisit this link!</a>
+                                    </div>
+                                    <div class="card-footer text-right">
+                                        <small class="form-text text-muted">Submitted on <%=links[i].date%></small>
+                                    </div>
+                                </div>
+                                <p></p>
+                            </div>
+                        </li>
+                    <% } %>    
+                    <br>
+                <% } %>
+            </div>
+        </ul>
+        </p>
+        <br>
+        
+        <!-- -->
+        
+        <div class="row justify-content-md-center">
+          <h4 class="text-warning">Useful Links:</h4>
+        </div>
+        <br>
+        <ul class="list-unstyled">
+            <div class="row justify-content-md-center">
+                <% for(var i=0; i <links.length; i++){ %>
+                    <% if ((links[i].category === 'Useful') || (links[i].category === 'useful')) { %>   
+                        <li>
+                            <div class="col col-lg-12">
+                                <div class="card border-secondary" style="width: 20rem;">
+                                    <div class="card-body text-center">
+                                        <h4 class="card-title"><%=links[i].name%></h4>
+                                        <br>
+                                        <p class="card-text text-secondary"><%=links[i].details%></p>
+                                        <a class="btn  btn-outline-warning" target="_blank" href="<%=links[i].item%>">Revisit this link!</a>
+                                    </div>
+                                    <div class="card-footer text-right">
+                                        <small class="form-text text-muted">Submitted on <%=links[i].date%></small>
+                                    </div>
+                                </div>
+                                <p></p>
+                            </div>
+                        </li>
+                    <% } %>    
+                    <br>
+                <% } %>
+            </div>
+        </ul>
+        </p>
+        <br>
+        
+        <!-- -->
+        
+        <div class="row justify-content-md-center">
+          <h4>General Links:</h4>
+        </div>
+        <br>
+        <ul class="list-unstyled">
+            <div class="row justify-content-md-center">
+                <% for(var i=0; i <links.length; i++){ %>
+                    <% if ((links[i].category === 'General') || (links[i].category === 'general')) { %>
+                        <li>
+                            <div class="col col-lg-12">
+                                <div class="card border-secondary" style="width: 20rem;">
+                                    <div class="card-body text-center">
+                                        <h4 class="card-title"><%=links[i].name%></h4>
+                                        <br>
+                                        <p class="card-text"><%=links[i].details%></p>
+                                        <a class="btn btn-outline-dark" target="_blank" href="<%=links[i].item%>">Revisit this link!</a>
+                                    </div>
+                                    <div class="card-footer text-right">
+                                        <small class="form-text text-muted">Submitted on <%=links[i].date%></small>
+                                    </div>
+                                </div>
+                                <p></p>
+                            </div>
+                        </li>
+                    <% } %>    
+                    <br>
+                <% } %>
+            </div>
+        </ul>
+        </p>
+        <br>
+        
+        <!-- -->
+        
+        <div class="row justify-content-md-center">
+          <h4 class="text-secondary">Other Links:</h4>
+        </div>
+        <br>
+        <ul class="list-unstyled">
+            <div class="row justify-content-md-center">
+                <% for(var i=0; i <links.length; i++){ %>
+                    <% if ((links[i].category === 'General') || (links[i].category === 'general')) { %>
+                    <% } else if ((links[i].category === 'Favorite') || (links[i].category === 'favorite')) { %>
+                    <% } else if ((links[i].category === 'Useful') || (links[i].category === 'useful')) { %>
+                    <% } else if ((links[i].category === 'Urgent') || (links[i].category === 'urgent')) { %>
+                    <% } else { %>     
+                        <li>
+                            <div class="col col-lg-12">
+                                <div class="card" style="width: 20rem;">
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title"><%=links[i].name%></h5>
+                                        <br>
+                                        <p class="card-text"><%=links[i].details%></p>
+                                        <a class="btn btn-outline-secondary" target="_blank" href="<%=links[i].item%>">Revisit this link!</a>
+                                    </div>
+                                    <div class="card-footer text-right">
+                                        <small class="form-text text-muted">Submitted on <%=links[i].date%></small>
+                                    </div>
+                                </div>
+                                <p></p>
+                            </div>
+                        </li>
+                    <% } %>    
+                    <br>
+                <% } %>
+            </div>
+        </ul>
+        </p>
+        <br>
+        
+        <!-- -->
+        
+        
+      </div>
+    </main>
+    <footer>
+        <p></p><p></p><p></p>
+      <% include partials/footer %>
+    </footer>
+  </body>
+</html>
